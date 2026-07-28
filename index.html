@@ -285,7 +285,7 @@
     </div>
     <div class="cardp">
       <button class="ph" type="button" data-g="vc202" aria-label="Open VC-202 photo gallery">
-        <img src="img/cards/vc202.jpg" alt="VC-202 600D double-dome violin case, coffee velvet interior with built-in hygrometer" loading="lazy">
+        <img src="img/cards/vc202.jpg?v=2" alt="VC-202 600D double-dome violin case, coffee velvet interior with built-in hygrometer" loading="lazy">
         <span class="cnt">5 photos</span><span class="zoom">Click to enlarge</span>
       </button>
       <div class="t">
@@ -297,7 +297,7 @@
     </div>
     <div class="cardp">
       <button class="ph" type="button" data-g="vc301" aria-label="Open VC-301 photo gallery">
-        <img src="img/cards/vc301.jpg" alt="VC-301 900D deluxe violin case with flocked coffee interior" loading="lazy">
+        <img src="img/cards/vc301.jpg?v=2" alt="VC-301 900D deluxe violin case with flocked coffee interior" loading="lazy">
         <span class="cnt">4 photos</span><span class="zoom">Click to enlarge</span>
       </button>
       <div class="t">
@@ -556,7 +556,7 @@ var GAL = {
   var lb=document.getElementById('lb'), im=document.getElementById('lbImg'),
       st=document.getElementById('lbS'), key=null, ix=0, opener=null;
 
-  function src(k,i){ return 'img/g/'+k+'_'+(i+1)+'.jpg'; }
+  function src(k,i){ var q=(k==='vc202'||k==='vc301')?'?v=2':''; return 'img/g/'+k+'_'+(i+1)+'.jpg'+q; }
 
   function show(i){
     var g=GAL[key]; ix=(i+g.n)%g.n;
