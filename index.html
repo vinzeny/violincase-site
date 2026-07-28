@@ -12,7 +12,7 @@
 <meta property="og:title" content="Violin Case Manufacturer — Wholesale &amp; OEM Oblong Violin Cases">
 <meta property="og:description" content="Oblong violin cases straight from the factory. Wholesale from MOQ 30, private label with your logo, mixed containers.">
 <meta property="og:url" content="https://violincase.luchenyuan.com/">
-<meta property="og:image" content="https://violincase.luchenyuan.com/img/cards/vc301.jpg">
+<meta property="og:image" content="https://violincase.luchenyuan.com/img/cards/vc302.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root{--ink:#2b2118;--brown:#6b3a24;--dark:#472315;--cream:#f7f2ea;--gold:#b98a4e;--lt:#e8c891;--line:#e6ddcf;}
@@ -80,6 +80,49 @@
   .cardp h3{font-size:17.5px;color:var(--dark);margin:3px 0 6px;}
   .cardp p{font-size:13.5px;color:#6b5f52;}
   .cardp .moq{margin-top:10px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brown);font-weight:700;}
+
+  /* photo button + hover enlarge */
+  .ph{position:relative;display:block;width:100%;padding:0;border:0;background:#efeeec;overflow:hidden;cursor:zoom-in;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent;}
+  .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1);}
+  .ph:hover img,.ph:focus-visible img{transform:scale(1.14);}
+  .ph:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+  .ph .cnt{position:absolute;right:9px;top:9px;background:rgba(20,12,6,.62);color:#fff;font-size:10.5px;
+    letter-spacing:.1em;padding:4px 8px;border-radius:2px;font-weight:700;backdrop-filter:blur(2px);}
+  .ph .zoom{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 11px;color:#fff;font-size:12px;
+    letter-spacing:.09em;text-transform:uppercase;font-weight:700;text-align:left;
+    background:linear-gradient(to top,rgba(20,12,6,.78),rgba(20,12,6,0));
+    opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;}
+  .ph:hover .zoom,.ph:focus-visible .zoom{opacity:1;transform:none;}
+  @media(hover:none){.ph .zoom{opacity:1;transform:none;}}
+
+  /* lightbox */
+  body.lbon .fab{opacity:0;pointer-events:none;}
+  .lb{position:fixed;inset:0;z-index:200;background:#0e0904;display:none;
+    flex-direction:column;align-items:center;justify-content:center;padding:16px;}
+  .lb.on{display:flex;}
+  .lb .stage{position:relative;max-width:1180px;width:100%;flex:1;display:flex;align-items:center;justify-content:center;min-height:0;}
+  .lb .stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lb .head{width:100%;max-width:1180px;display:flex;align-items:baseline;gap:12px;color:#fff;padding:8px 62px 12px 2px;}
+  .lb .head b{font-size:11px;letter-spacing:.2em;color:var(--lt);font-weight:700;}
+  .lb .head span{font-size:13px;color:#d9cdbc;}
+  .lb .head i{margin-left:auto;font-style:normal;font-size:12px;color:#a99b89;letter-spacing:.06em;}
+  .lb .x{position:absolute;top:10px;right:12px;z-index:3;background:rgba(255,255,255,.1);border:0;color:#fff;
+    width:42px;height:42px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;}
+  .lb .x:hover{background:rgba(255,255,255,.22);}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(255,255,255,.1);border:0;
+    color:#fff;width:48px;height:64px;font-size:24px;cursor:pointer;}
+  .lb .nav:hover{background:rgba(255,255,255,.24);}
+  .lb .prev{left:-4px;} .lb .next{right:-4px;}
+  .lb .strip{display:flex;gap:8px;overflow-x:auto;max-width:100%;padding:14px 2px 2px;}
+  .lb .strip img{width:74px;height:56px;object-fit:cover;opacity:.45;cursor:pointer;flex:0 0 auto;
+    border:2px solid transparent;transition:opacity .2s;}
+  .lb .strip img:hover{opacity:.85;}
+  .lb .strip img.sel{opacity:1;border-color:var(--lt);}
+  @media(max-width:700px){
+    .lb .nav{width:40px;height:52px;font-size:20px;}
+    .lb .prev{left:0;} .lb .next{right:0;}
+    .lb .strip img{width:58px;height:44px;}
+  }
 
   /* spec table */
   .tablewrap{margin-top:34px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:#fff;}
@@ -217,7 +260,10 @@
 
   <div class="grid">
     <div class="cardp">
-      <img src="img/cards/vc101.jpg" alt="VC-101 student foam oblong violin case with teal plush interior" loading="lazy">
+      <button class="ph" type="button" data-g="vc101" aria-label="Open VC-101 photo gallery">
+        <img src="img/cards/vc101.jpg" alt="VC-101 student foam oblong violin case with teal plush interior" loading="lazy">
+        <span class="cnt">3 photos</span><span class="zoom">Click to enlarge</span>
+      </button>
       <div class="t">
         <div class="m">VC-101</div><h3>Student Foam Oblong</h3>
         <p>Lightweight foam shell, plush interior, sheet-music pocket. The volume model for schools
@@ -226,7 +272,10 @@
       </div>
     </div>
     <div class="cardp">
-      <img src="img/cards/vc201.jpg" alt="VC-201 600D double-dome violin case, black shell with army-green velvet interior" loading="lazy">
+      <button class="ph" type="button" data-g="vc201" aria-label="Open VC-201 photo gallery">
+        <img src="img/cards/vc201.jpg" alt="VC-201 600D double-dome violin case, black shell with army-green velvet interior" loading="lazy">
+        <span class="cnt">5 photos</span><span class="zoom">Click to enlarge</span>
+      </button>
       <div class="t">
         <div class="m">VC-201</div><h3>600D Double-Dome · Army Green</h3>
         <p>600D Oxford shell over a double-dome frame, army-green velvet interior, string tube,
@@ -235,7 +284,10 @@
       </div>
     </div>
     <div class="cardp">
-      <img src="img/cards/vc202.jpg" alt="VC-202 600D double-dome violin case, coffee velvet interior with built-in hygrometer" loading="lazy">
+      <button class="ph" type="button" data-g="vc202" aria-label="Open VC-202 photo gallery">
+        <img src="img/cards/vc202.jpg" alt="VC-202 600D double-dome violin case, coffee velvet interior with built-in hygrometer" loading="lazy">
+        <span class="cnt">5 photos</span><span class="zoom">Click to enlarge</span>
+      </button>
       <div class="t">
         <div class="m">VC-202</div><h3>600D Double-Dome · Coffee</h3>
         <p>Same 600D shell and fittings as the VC-201 in a warmer coffee velvet, with instrument
@@ -244,7 +296,10 @@
       </div>
     </div>
     <div class="cardp">
-      <img src="img/cards/vc301.jpg" alt="VC-301 900D deluxe violin case with flocked coffee interior" loading="lazy">
+      <button class="ph" type="button" data-g="vc301" aria-label="Open VC-301 photo gallery">
+        <img src="img/cards/vc301.jpg" alt="VC-301 900D deluxe violin case with flocked coffee interior" loading="lazy">
+        <span class="cnt">4 photos</span><span class="zoom">Click to enlarge</span>
+      </button>
       <div class="t">
         <div class="m">VC-301</div><h3>900D Deluxe · Coffee</h3>
         <p>Premium 900D exterior, soft flocked interior, built-in hygrometer. The step-up model —
@@ -253,7 +308,10 @@
       </div>
     </div>
     <div class="cardp">
-      <img src="img/cards/vc302.jpg" alt="VC-302 900D deluxe violin case with flocked blue interior" loading="lazy">
+      <button class="ph" type="button" data-g="vc302" aria-label="Open VC-302 photo gallery">
+        <img src="img/cards/vc302.jpg" alt="VC-302 900D deluxe violin case with flocked blue interior" loading="lazy">
+        <span class="cnt">3 photos</span><span class="zoom">Click to enlarge</span>
+      </button>
       <div class="t">
         <div class="m">VC-302</div><h3>900D Deluxe · Blue</h3>
         <p>The same deluxe build in a deep blue flocked interior, with hygrometer and silk blanket
@@ -474,7 +532,97 @@
 
 <a class="fab" href="https://wa.me/8613221001019" aria-label="Chat on WhatsApp">💬</a>
 
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Product photos">
+  <button class="x" type="button" id="lbX" aria-label="Close">×</button>
+  <div class="head"><b id="lbM"></b><span id="lbT"></span><i id="lbC"></i></div>
+  <div class="stage">
+    <button class="nav prev" type="button" id="lbP" aria-label="Previous photo">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="nav next" type="button" id="lbN" aria-label="Next photo">›</button>
+  </div>
+  <div class="strip" id="lbS"></div>
+</div>
+
 <script>
+var GAL = {
+  vc101:{m:'VC-101',t:'Student Foam Oblong',n:3},
+  vc201:{m:'VC-201',t:'600D Double-Dome · Army Green',n:5},
+  vc202:{m:'VC-202',t:'600D Double-Dome · Coffee',n:5},
+  vc301:{m:'VC-301',t:'900D Deluxe · Coffee',n:4},
+  vc302:{m:'VC-302',t:'900D Deluxe · Blue',n:3}
+};
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbImg'),
+      st=document.getElementById('lbS'), key=null, ix=0, opener=null;
+
+  function src(k,i){ return 'img/g/'+k+'_'+(i+1)+'.jpg'; }
+
+  function show(i){
+    var g=GAL[key]; ix=(i+g.n)%g.n;
+    im.src=src(key,ix); im.alt=g.m+' '+g.t+' — photo '+(ix+1)+' of '+g.n;
+    document.getElementById('lbC').textContent=(ix+1)+' / '+g.n;
+    var th=st.children;
+    for(var j=0;j<th.length;j++) th[j].className=(j===ix?'sel':'');
+    // preload neighbour
+    var p=new Image(); p.src=src(key,(ix+1)%g.n);
+  }
+
+  function open(k){
+    key=k; var g=GAL[k];
+    document.getElementById('lbM').textContent=g.m;
+    document.getElementById('lbT').textContent=g.t;
+    st.innerHTML='';
+    for(var i=0;i<g.n;i++){
+      var t=document.createElement('img');
+      t.src=src(k,i); t.alt=''; t.setAttribute('data-i',i);
+      st.appendChild(t);
+    }
+    lb.classList.add('on');
+    document.body.classList.add('lbon');
+    document.body.style.overflow='hidden';
+    show(0);
+    document.getElementById('lbX').focus();
+  }
+
+  function close(){
+    lb.classList.remove('on');
+    document.body.classList.remove('lbon');
+    document.body.style.overflow='';
+    im.removeAttribute('src');
+    if(opener) opener.focus();
+  }
+
+  var btns=document.querySelectorAll('.ph');
+  for(var b=0;b<btns.length;b++){
+    btns[b].addEventListener('click',function(e){
+      opener=this; open(this.getAttribute('data-g'));
+    });
+  }
+  document.getElementById('lbX').addEventListener('click',close);
+  document.getElementById('lbP').addEventListener('click',function(e){e.stopPropagation();show(ix-1);});
+  document.getElementById('lbN').addEventListener('click',function(e){e.stopPropagation();show(ix+1);});
+  st.addEventListener('click',function(e){
+    var i=e.target.getAttribute && e.target.getAttribute('data-i');
+    if(i!==null && i!==undefined) show(parseInt(i,10));
+  });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.className==='stage') close(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') show(ix-1);
+    else if(e.key==='ArrowRight') show(ix+1);
+  });
+  // swipe
+  var x0=null;
+  lb.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>45) show(dx<0?ix+1:ix-1);
+  },{passive:true});
+})();
+
 function sendWA(){
   var v = function(id){ var e=document.getElementById(id); return e ? e.value.trim() : ''; };
   var L = [];
